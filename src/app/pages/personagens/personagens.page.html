@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Rick and Morty Teste Bruno API
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+    <ion-card color="dark">
+      <ion-card-header>
+        <ion-card-subtitle>Welcome to our News App</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>
+          Enjoy the latest news from TechCrunch. 
+        </p>
+        <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
