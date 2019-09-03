@@ -4,21 +4,22 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Rick and Morty Teste Bruno API
+       Rick and Morty Angular
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="dark">
-    <ion-card color="dark">
-      <ion-card-header>
-        <ion-card-subtitle>Welcome to our News App</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <p>
-          Enjoy the latest news from TechCrunch. 
-        </p>
-        <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner>
-      </ion-card-content>
-    </ion-card>
+
+  <ion-card  *ngFor="let character of characters">
+    <img src="{{character.image}}" />
+    <ion-card-header>
+      <ion-card-subtitle>{{character.status}}</ion-card-subtitle>
+      <ion-card-title>{{character.name}}"</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        {{character.origin.name}}
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

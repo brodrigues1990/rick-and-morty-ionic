@@ -7,12 +7,16 @@ import { REMServices } from '../../services/remservices';
 })
 export class PersonagensPage  {
 
+  public obj: any;
+  public characters: any;
+
   constructor(private remServices: REMServices){}
 
   ionViewDidEnter(){
-
+	  
     this.remServices.getCharacter().subscribe((data)=>{
-      console.log(data);
+		this.obj = data;
+		this.characters = this.obj.results;
     });
   }
 
