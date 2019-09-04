@@ -15,4 +15,8 @@ export class REMServices {
   getCharacter(){
     return this.http.get(`${this.URL_API}character/`);
   }
+
+  getDetails(id) {
+    return this.http.get(`${this.URL_API}character/${id}`);
+  }
 }

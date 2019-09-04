@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PersonagensPage } from './personagens.page';
 
+import {MatListModule} from '@angular/material/list';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,7 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MatListModule
   ],
   declarations: [PersonagensPage]
 })

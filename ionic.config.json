@@ -1,5 +1,8 @@
 {
   "name": "rick-and-morty-ionic",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

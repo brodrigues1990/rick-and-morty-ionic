@@ -11,15 +11,15 @@
 
 <ion-content color="dark">
 
-  <ion-card  *ngFor="let character of characters">
-    <img src="{{character.image}}" />
-    <ion-card-header>
-      <ion-card-subtitle>{{character.status}}</ion-card-subtitle>
-      <ion-card-title>{{character.name}}"</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-        {{character.origin.name}}
-    </ion-card-content>
-  </ion-card>
+  <ion-item  *ngFor="let character of characters">
+      <ion-avatar slot="start">
+          <img src="{{character.image}}" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{character.name}}</h2>
+        <h3>{{character.status}}</h3>
+        <p>{{character.origin.name}}</p>
+      </ion-label>
+    </ion-item>
 
 </ion-content>
