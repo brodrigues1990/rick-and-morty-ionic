@@ -12,15 +12,22 @@ export class PersonagensPage  {
   public obj: any;
   //public characters: any;
   personagens: Personagens[] = [];
-
+  page = 1;
   constructor(private remServices: REMServices){}
 
-  ionViewDidEnter(){
+  ngOnInit(){
 	  
-    this.remServices.getCharacter().subscribe((data)=>{
+	this.remServices
+	.getCharacter(`?page=${this.page}`)
+	.subscribe((data)=>{
+		console.log(data.info.pages);
 		this.obj = data;
 		this.personagens = this.obj.results;
     });
+  }
+
+  doInfinite(event){
+	  console.log(event);
   }
 
 }
