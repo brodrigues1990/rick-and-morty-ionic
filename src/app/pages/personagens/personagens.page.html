@@ -11,14 +11,14 @@
 
 <ion-content color="dark">
 
-  <ion-item  *ngFor="let character of characters">
+  <ion-item  *ngFor="let personagem of personagens">
       <ion-avatar slot="start">
-          <img src="{{character.image}}" />
+          <img src="{{personagem.image}}" />
       </ion-avatar>
       <ion-label>
-        <h2>{{character.name}}</h2>
-        <h3>{{character.status}}</h3>
-        <p>{{character.origin.name}}</p>
+        <h2>{{personagem.name}}</h2>
+        <h3>{{personagem.status}}</h3>
+        <p>{{personagem.origin.name}}</p>
       </ion-label>
     </ion-item>
 

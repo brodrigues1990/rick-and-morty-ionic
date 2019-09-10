@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { REMServices } from '../../services/remservices';
+import { Personagens } from "../../models/Personagens";
+
 @Component({
   selector: 'app-personagens',
   templateUrl: './personagens.page.html',
@@ -8,7 +10,8 @@ import { REMServices } from '../../services/remservices';
 export class PersonagensPage  {
 
   public obj: any;
-  public characters: any;
+  //public characters: any;
+  personagens: Personagens[] = [];
 
   constructor(private remServices: REMServices){}
 
@@ -16,7 +19,7 @@ export class PersonagensPage  {
 	  
     this.remServices.getCharacter().subscribe((data)=>{
 		this.obj = data;
-		this.characters = this.obj.results;
+		this.personagens = this.obj.results;
     });
   }
 
