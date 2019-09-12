@@ -12,8 +12,8 @@ export class REMServices {
   constructor(private http: HttpClient) { }
  
 
-  getCharacter(){
-    return this.http.get(`${this.URL_API}character/`);
+  getCharacter(page){
+    return this.http.get(`${this.URL_API}character/?page=${page}`);
   }
 
   getDetails(id) {

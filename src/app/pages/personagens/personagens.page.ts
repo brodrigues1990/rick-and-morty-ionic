@@ -16,18 +16,27 @@ export class PersonagensPage  {
   constructor(private remServices: REMServices){}
 
   ngOnInit(){
-	  
 	this.remServices
-	.getCharacter(`?page=${this.page}`)
+	.getCharacter(`${this.page}`)
 	.subscribe((data)=>{
-		console.log(data.info.pages);
+		console.log(data);
 		this.obj = data;
 		this.personagens = this.obj.results;
     });
   }
 
   doInfinite(event){
-	  console.log(event);
+		console.log(event);
+		this.page++;
+		this.remServices
+		.getCharacter(`${this.page}`)
+		.subscribe((data)=>{
+			console.log(data);
+			for(const personagem of data[`results`]){
+				this.personagens.push(personagem);
+			}
+			event.target.complete();
+		});
   }
 
 }
